@@ -1,13 +1,17 @@
-const wrapper = document.querySelector('.wrapper');
-const signUpLink = document.querySelector('.signUp-link');
-const signInLink = document.querySelector('.signIn-link');
-
-signUpLink.addEventListener('click', () => {
-    wrapper.classList.add('animate-signIn');
-    wrapper.classList.remove('animate-signUp');
+const loginText = document.querySelector(".title-text .login");
+const loginForm = document.querySelector("form.login");
+const loginBtn = document.querySelector("label.login");
+const signupBtn = document.querySelector("label.signup");
+const signupLink = document.querySelector("form .signup-link a");
+signupBtn.onclick = (()=>{
+  loginForm.style.marginLeft = "-50%";
+  loginText.style.marginLeft = "-50%";
 });
-
-signInLink.addEventListener('click', () => {
-    wrapper.classList.add('animate-signUp');
-    wrapper.classList.remove('animate-signIn');
+loginBtn.onclick = (()=>{
+  loginForm.style.marginLeft = "0%";
+  loginText.style.marginLeft = "0%";
+});
+signupLink.onclick = (()=>{
+  signupBtn.click();
+  return false;
 });

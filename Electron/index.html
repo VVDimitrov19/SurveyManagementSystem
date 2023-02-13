@@ -1,62 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> meta.codes - Animated Login and Registration Form </title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-
-<body>
-
-    <div class="wrapper">
-        <div class="form-wrapper sign-up">
-            <form action="">
-                <h2>Sign Up</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="email" required>
-                    <label for="">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <div class="sign-link">
-                    <p>Already have an account? <a href="#" class="signIn-link">Sign In</a></p>
-                </div>
-            </form>
-        </div>
-
-        <div class="form-wrapper sign-in">
-            <form action="">
-                <h2>Login</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                </div>
-                <div class="forgot-pass">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <div class="sign-link">
-                    <p>Don't have an account? <a href="#" class="signUp-link">Sign Up</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script src="JavaScript/script.js"></script>
-</body>
-
-</html>
+  <html lang="en" dir="ltr">
+    <head>
+       <meta charset="utf-8">
+       <title>Login and Registration Form in HTML | CodingNepal</title>
+       <link rel="stylesheet" href="style/style.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div class="wrapper">
+          <div class="title-text">
+             <div class="title login">
+                Login Form
+             </div>
+             <div class="title signup">
+                Signup Form
+             </div>
+          </div>
+          <div class="form-container">
+             <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+             </div>
+             <div class="form-inner">
+                <form action="#" class="login">
+                   <div class="field">
+                      <input type="text" placeholder="Email Address" required>
+                   </div>
+                   <div class="field">
+                      <input type="password" placeholder="Password" required>
+                   </div>
+                   <div class="pass-link">
+                      <a href="#">Forgot password?</a>
+                   </div>
+                   <div class="field btn">
+                      <div class="btn-layer"></div>
+                      <input type="submit" value="Login">
+                   </div>
+                   <div class="signup-link">
+                      Not a member? <a href="">Signup now</a>
+                   </div>
+                </form>
+                <form action="#" class="signup">
+                   <div class="field">
+                      <input type="text" placeholder="Email Address" required>
+                   </div>
+                   <div class="field">
+                      <input type="password" placeholder="Password" required>
+                   </div>
+                   <div class="field">
+                      <input type="password" placeholder="Confirm password" required>
+                   </div>
+                   <div class="field btn">
+                      <div class="btn-layer"></div>
+                      <input type="submit" value="Signup">
+                   </div>
+                </form>
+             </div>
+          </div>
+       </div>
+       <script src = "JavaScript/script.js"></script>
+    </body>
+ </html>
