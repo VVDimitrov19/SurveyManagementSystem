@@ -17,27 +17,40 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   });
 
-  function registerUser() {
-    const form = document.querySelector('form.signup');
-    const formData = new FormData(form);
+  const signupForm = document.querySelector("form.signup");
+
+  signupForm.addEventListener("submit", (event) => {
+    event.preventDefault();
   
-    fetch('http://localhost:8080/register', {
-      method: 'POST',
-      body: formData,
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    const confirmPassword = document.querySelector("#confirmPassword").value;
+  
+    const data = {
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword
+    };
+  
+    fetch("http://localhost:8080/api/users/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
     })
       .then(response => {
-        if (response.ok) {
-          alert('User registered successfully.');
-          window.location.href = '/login';
-        } else {
-          throw new Error('Failed to register user.');
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        // Do something with the response data
       })
       .catch(error => {
-        alert(error.message);
+        console.error("There was a problem with the fetch operation:", error);
       });
-  }
-  
-
-  document.querySelector('form.signup').addEventListener('submit', registerUser);
+  });
 });
