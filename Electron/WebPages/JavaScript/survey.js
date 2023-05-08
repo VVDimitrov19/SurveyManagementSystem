@@ -323,3 +323,9 @@ function Survey(survey) {
 }
 
 const survey = Survey(document.querySelector(".survey"));
+
+function redirect() {
+  setTimeout(function() {
+    window.location.href = "MainPage.html";
+  }, 5000);
+}
