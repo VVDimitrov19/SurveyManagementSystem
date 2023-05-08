@@ -26,7 +26,7 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody User user) {
-        User existingUser = userService.findByEmail(user.getEmail());
+        User existingUser = userService.getUserByEmail(user.getEmail());
 
         if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
             // Passwords match, login successful
