@@ -52,3 +52,41 @@ function redirect() {
       console.error('An error occurred while saving the survey response:', error);
     });
   }
+
+  function redirectToAnswersPage() {
+    // Get form values
+    const question1 = document.querySelector('input[name="question_1"]:checked').value;
+    const question2 = document.querySelector('input[name="question_2"]:checked').value;
+    const question3 = document.querySelector('input[name="question_3"]:checked').value;
+    const question4 = document.querySelector('input[name="question_4"]:checked').value;
+    const recommendText = document.getElementById('recommendation').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const country = document.getElementById('dropdown').value;
+    const age = parseInt(document.getElementById('number').value);
+  
+    // Create survey response object
+    const surveyResponse = {
+      question1,
+      question2,
+      question3,
+      question4,
+      recommendText,
+      name,
+      email,
+      country,
+      age
+    };
+  
+    // Store survey response in localStorage
+    localStorage.setItem('surveyResponse', JSON.stringify(surveyResponse));
+  
+    // Redirect to answers page
+    window.location.href = 'Answers.html';
+  }
+
+  function enableSubmitButton() {
+    var submitButton = document.getElementById("submit");
+    submitButton.disabled = false;
+  }
+  

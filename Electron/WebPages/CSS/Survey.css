@@ -199,6 +199,10 @@ label {
   background-color: var(--lightGreen);
 }
 
+button[type="submit"][disabled] {
+  display: none;
+}
+
 .progressbar__step:before {
   counter-increment: list;
   content: counter(list);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Answers</title>
+  <link rel="stylesheet" href="style.css"> <!-- Add your own CSS styling -->
+</head>
+<body>
+  <main>
+    <h1>Your Answers</h1>
+    <div id="answers-container"></div>
+
+    <script>
+      // Retrieve survey response from localStorage
+      const surveyResponse = JSON.parse(localStorage.getItem('surveyResponse'));
+
+      // Display answers on the page
+      const answersContainer = document.getElementById('answers-container');
+      for (const key in surveyResponse) {
+        const answer = surveyResponse[key];
+        const answerElement = document.createElement('p');
+        answerElement.textContent = `${key}: ${answer}`;
+        answersContainer.appendChild(answerElement);
+      }
+
+      // Clear survey response from localStorage
+      localStorage.removeItem('surveyResponse');
+    </script>
+  </main>
+</body>
+</html>
