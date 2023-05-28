@@ -72,25 +72,25 @@
         <p class="error-message"></p>
       </section>
   
-      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="checkbox">
+      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="option">
         <h2 class="survey__panel__question">
           <span class="visuallyhidden">Question 3 of 5 </span>What is the best way to tell people about the global environment?
         </h2>
         <div class="survey__panel__hearabout">
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="searchengine" name="question_3" value="Search Engine" />
+            <input type="radio" class="radiobox" id="searchengine" name="question_3" value="Search Engine" />
             <label for="searchengine">Adds</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="friend" name="question_3" value="A friend of mine" />
+            <input type="radio" class="radiobox" id="friend" name="question_3" value="A friend of mine" />
             <label for="friend">Online Adds</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="socialmedia" name="question_3" value="Social Media" />
+            <input type="radio" class="radiobox" id="socialmedia" name="question_3" value="Social Media" />
             <label for="socialmedia">Social Media</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="other" name="question_3" value="Other" />
+            <input type="radio" class="radiobox" id="other" name="question_3" value="Other" />
             <label for="other">Other</label>
           </div>
         </div>
@@ -399,7 +399,7 @@
           Prev
         </button>
         <button class="button" type="button" name="next" aria-label="Next" aria-hidden="false">Next</button>
-        <button class="button" type="submit" id="submit" name="submit" disabled="disabled" aria-hidden="true" onclick="s">
+        <button class="button" type="submit" id="submit" name="submit" disabled="disabled" aria-hidden="true" onclick="saveAnswers()">
           Submit
         </button>
       </div>
@@ -407,4 +407,5 @@
   </main>
   </div>
   
-  <script src="JavaScript/survey.js"></script> 
+  <script src="JavaScript/Survey.js"></script> 
+  <script src = "JavaScript/SurveyFour.js"></script>
