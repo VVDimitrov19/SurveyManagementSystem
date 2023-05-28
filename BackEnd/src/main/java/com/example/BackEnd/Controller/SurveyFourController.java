@@ -15,6 +15,7 @@ public class SurveyFourController {
     @Autowired
     private SurveyFourRepository surveyResponseRepository;
 
+    // Endpoint to save survey response
     @PostMapping("/api/responsesFour")
     public ResponseEntity<String> saveSurveyResponse(@RequestBody SurveyFour surveyResponse) {
         try {

@@ -10,6 +10,7 @@ public class SurveyTwo {
     @Column(name = "Id")
     private Long id;
 
+    // Fields representing the survey questions and user information
     @Column(name = "QuestionOne")
     private String question1;
     @Column(name = "QuestionTwo")
@@ -29,7 +30,7 @@ public class SurveyTwo {
     @Column(name = "Age")
     private Integer age;
 
-
+    // Getters and setters for the fields
     public Long getId() {
         return id;
     }

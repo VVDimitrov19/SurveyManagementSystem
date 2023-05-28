@@ -9,18 +9,18 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    // Constructor injection of the UserRepository dependency
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+    // Method to save a user in the database
     public User saveUser(User user) {
         return userRepository.save(user);
     }
 
+    // Method to retrieve a user by email from the database
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 }
-
-
-
