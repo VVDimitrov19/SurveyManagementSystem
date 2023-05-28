@@ -3,7 +3,7 @@ function Survey(survey) {
     throw new Error("No Survey Form found!");
   }
 
-  // select the elements
+  //Select the elements
   const progressbar = survey.querySelector(".progressbar");
   const surveyPanels = survey.querySelectorAll(".survey__panel");
   const question1Radios = survey.querySelectorAll("[name='question_1']");
@@ -40,6 +40,7 @@ function Survey(survey) {
   };
   let dontSubmit = false;
 
+  //Stores data
   function storeInitialData() {
     allPanels.map((panel) => {
       let index = panel.dataset.index;
@@ -54,6 +55,7 @@ function Survey(survey) {
     });
   }
 
+  //Updates Progressbar
   function updateProgressbar() {
     let index = currentPanel.dataset.index;
     let currentQuestion = formData[`${parseFloat(index)}`].question;
@@ -62,6 +64,7 @@ function Survey(survey) {
     progressbarStep[index - 1].classList.add("active");
   }
 
+  //Updates Data
   function updateFormData({ target }) {
     const index = +currentPanel.dataset.index;
     const { name, type, value } = target;
@@ -101,6 +104,7 @@ function Survey(survey) {
     };
   }
 
+  //Shows Errors
   function showError(input, text) {
     const formControl = input.parentElement;
     const errorElement = formControl.querySelector(".error-message");
@@ -124,12 +128,14 @@ function Survey(survey) {
     errorElement.removeAttribute("role");
   }
 
+  //Gets Name
   function getName(input) {
     if (input.name === "age") return "Age";
     if (input.name === "country") return "Country";
     return `${input.id.charAt(0).toUpperCase()}${input.id.slice(1)}`;
   }
 
+  //Checks Email
   function checkEmail(input) {
     if (input.value.trim() === "") {
       showError(input, `${getName(input)} is required`);
@@ -142,7 +148,7 @@ function Survey(survey) {
       }
     }
   }
-
+  //Check Data
   function checkRequired(input) {
     if (input.value.trim() === "") {
       showError(input, `${getName(input)} is required`);
@@ -169,6 +175,7 @@ function Survey(survey) {
     }
   }
 
+  //Check Requirements
   function checkRequirements() {
     const requirement = currentPanel.dataset.requirement;
     const index = currentPanel.dataset.index;
@@ -266,7 +273,7 @@ function Survey(survey) {
     }
   }
 
-  // submitting the form
+  //Submitting the form
   function handleFormSubmit(e) {
     checkRequirements();
     if (!dontSubmit) {
