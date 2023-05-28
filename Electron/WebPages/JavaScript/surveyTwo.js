@@ -31,7 +31,7 @@ function redirect() {
     };
   
     // Send POST request to Spring Boot endpoint
-    fetch('http://localhost:8080/api/responsesOne', {
+    fetch('http://localhost:8080/api/responsesTwo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
