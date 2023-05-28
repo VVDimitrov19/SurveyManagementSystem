@@ -2,10 +2,6 @@ package com.example.BackEnd.Model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 @Entity
 @Table(name = "SurveyOne")
 public class SurveyOne {
@@ -18,9 +14,8 @@ public class SurveyOne {
     private String question1;
     @Column(name = "QuestionTwo")
     private String question2;
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
-    @JoinColumn(name = "survey_id")
-    private List<QuestionThreeOption> question3;
+    @Column(name = "QuestionThree")
+    private String question3;
     @Column(name = "QuestionFour")
     private String question4;
     @Column(name = "Text")
@@ -33,9 +28,6 @@ public class SurveyOne {
     private String country;
     @Column(name = "Age")
     private Integer age;
-    @ManyToOne
-    @JoinColumn(name = "survey_id")
-    private SurveyOne surveyOne;
 
 
     public Long getId() {
@@ -62,12 +54,12 @@ public class SurveyOne {
         this.question2 = question2;
     }
 
-    public List<String> getQuestion3Values() {
-        List<String> values = new ArrayList<>();
-        for (QuestionThreeOption option : question3) {
-            values.add(option.getOptionValue());
-        }
-        return values;
+    public String getQuestion3() {
+        return question3;
+    }
+
+    public void setQuestion3(String question3) {
+        this.question3 = question3;
     }
 
     public String getQuestion4() {

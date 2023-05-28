@@ -334,7 +334,7 @@ function saveAnswers() {
   // Get form values
   const question1 = document.querySelector('input[name="question_1"]:checked').value;
   const question2 = document.querySelector('input[name="question_2"]:checked').value;
-  const question3 = Array.from(document.querySelectorAll('input[name="question_3"]:checked')).map(input => input.value);
+  const question3 = document.querySelector('input[name="question_3"]:checked').value;
   const question4 = document.querySelector('input[name="question_4"]:checked').value;
   const recommendText = document.getElementById('recommendation').value;
   const name = document.getElementById('name').value;

@@ -1,7 +1,7 @@
 package com.example.BackEnd.Controller;
 
 import com.example.BackEnd.Model.SurveyOne;
-import com.example.BackEnd.UserRepository.SurveyRepository;
+import com.example.BackEnd.UserRepository.SurveyOneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SurveyController {
+public class SurveyOneController {
 
     @Autowired
-    private SurveyRepository surveyResponseRepository;
+    private SurveyOneRepository surveyResponseRepository;
 
     @PostMapping("/api/responses")
     public ResponseEntity<String> saveSurveyResponse(@RequestBody SurveyOne surveyResponse) {
