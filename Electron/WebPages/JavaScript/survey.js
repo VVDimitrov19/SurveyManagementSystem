@@ -323,20 +323,3 @@ function Survey(survey) {
 }
 
 const survey = Survey(document.querySelector(".survey"));
-
-// JavaScript code to show the buttons on the last question
-var buttonsContainer = document.querySelector('.container');
-var questions = document.querySelectorAll('.survey__panel');
-var submitButton = document.getElementById('submit');
-var viewAnswersButton = document.getElementById('view-answers-button');
-
-// Add an event listener to the "Next" button
-document.querySelector('button[name="next"]').addEventListener('click', function() {
-  // Check if it's the last question
-  if (questions[questions.length - 1].classList.contains('survey__panel--current')) {
-    // Show the buttons
-    submitButton.style.display = 'block';
-    viewAnswersButton.style.display = 'block';
-  }
-});
-

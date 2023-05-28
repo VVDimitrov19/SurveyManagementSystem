@@ -399,15 +399,9 @@
         Prev
       </button>
       <button class="button" type="button" name="next" aria-label="Next" aria-hidden="false">Next</button>
-
-      <!-- View Answers button initially hidden -->
-      <button class="button" id="view-answers-button" type="submit" id="submit" name="submit" style="display: none;" onclick="redirectToAnswersPage()">View Answers</button>
-      
-      <!-- Submit button initially hidden -->
-      <button class="button" type="submit" id="submit" name="submit" style="display: none;" onclick="saveAnswers()">
+      <button class="button" type="submit" id="submit" name="submit" disabled="disabled" aria-hidden="true" onclick="saveAnswers()">
         Submit
       </button>
-      
     </div>
   </form>
 </main>
